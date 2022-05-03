@@ -16,7 +16,7 @@ public class mainClass {
 	
 	while(true) {
 		
-		System.out.println(question);
+		
 		
 		System.out.print("숫자를 입력해주세요  : ");
 		
@@ -52,7 +52,7 @@ public class mainClass {
 		}
 		
 	}
-	
+	System.out.println();
 	System.out.println("게임이 종료되었습니다 :)");
 	
 	
