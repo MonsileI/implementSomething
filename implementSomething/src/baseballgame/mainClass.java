@@ -16,6 +16,7 @@ public class mainClass {
 	
 	while(true) {
 		
+	
 		
 		
 		System.out.print("숫자를 입력해주세요  : ");
@@ -24,14 +25,13 @@ public class mainClass {
 		
 		checkAnswer ca = new checkAnswer();
 
-		if(!ca.check(answer)) {
-			
+		
 			
 			while(!ca.check(answer)) {
-				System.out.println("숫자를 다시 입력해주세요. (세가지 숫자를 중복 없이 입력해 주셔야해요 ㅜㅜ)");
+				
 				answer = br.readLine();
 			}
-		}
+		
 		
 		
 		calculator cal = new calculator();
@@ -67,7 +67,18 @@ class checkAnswer {
 	
 	public static boolean check(String answer) {
 		
-		if(answer.length()!=3)return false;
+		try {
+			Integer.parseInt(answer);
+			
+		} catch (Exception e) {
+			System.out.println("숫자를 다시 입력해주세요. (숫자만 입력해주세요 ㅜㅠ");
+			return false;
+		}
+		
+		if(answer.length()!=3) {
+			System.out.println("숫자를 다시 입력해주세요. (세가지 숫자를 중복 없이 입력해 주셔야해요 ㅜㅜ)");
+			return false;
+		}
 		
 		char first = answer.charAt(0);
 		char second = answer.charAt(1);
